@@ -280,6 +280,12 @@
     <Content Include="Views\visits\Details.cshtml" />
     <Content Include="Views\visits\Edit.cshtml" />
     <Content Include="Views\visits\Index.cshtml" />
+    <Content Include="Views\Home\Manage.cshtml" />
+    <Content Include="Views\members\MemberPortal.cshtml" />
+    <Content Include="Views\employees\EmployeePortal.cshtml" />
+    <Content Include="Views\departments\DepartmentPortal.cshtml" />
+    <Content Include="Views\stores\StorePortal.cshtml" />
+    <Content Include="Views\visits\VisitPortal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

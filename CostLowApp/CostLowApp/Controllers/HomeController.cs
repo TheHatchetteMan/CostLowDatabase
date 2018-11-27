@@ -26,5 +26,11 @@ namespace CostLowApp.Controllers
 
             return View();
         }
+
+        public ActionResult Manage()
+        {
+            ViewBag.Message = "Management Portal.";
+            return View();
+        }
     }
 }

@@ -128,5 +128,12 @@ namespace CostLowApp.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult EmployeePortal()
+        {
+            ViewBag.Message = "Employee Actions.";
+
+            return View();
+        }
     }
 }

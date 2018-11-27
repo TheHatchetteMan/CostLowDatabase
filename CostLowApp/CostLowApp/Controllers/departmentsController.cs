@@ -128,5 +128,12 @@ namespace CostLowApp.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult DepartmentPortal()
+        {
+            ViewBag.Message = "Department Actions.";
+
+            return View();
+        }
     }
 }

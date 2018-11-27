@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Manage";
+}
+
+<div class="jumbotron">
+    <h1>Management Portal</h1>
+    <p class="lead">
+        Welcome to the management portal. You may manage the database from this page. Please select one
+        of the links below to get get to the appropriate information you would like to manage:
+    </p>
+    <style>
+        .btn-group .button {
+            background-color: lightslategray;
+            border: 1px thick;
+            color: Black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            float: left;
+        }
+
+            .btn-group .button:not(:last-child) {
+                border-right: none; /* Prevent double borders */
+            }
+
+            .btn-group .button:hover {
+                background-color: azure;
+            }
+    </style>
+    <div class="btn-group">
+        <a href="/employees/EmployeePortal" class="button">Employees</a>
+        <a href="/stores/StorePortal" class="button">Stores</a>
+        <a href="/departments/DepartmentPortal" class="button">Departments</a>
+        <a href="/members/MemberPortal" class="button">Members</a>
+        <a href="/visits/VisitPortal" class="button">Visits</a>
+    </div>
+</div>
