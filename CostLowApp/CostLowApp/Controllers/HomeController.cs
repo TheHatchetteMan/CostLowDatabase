@@ -32,5 +32,10 @@ namespace CostLowApp.Controllers
             ViewBag.Message = "Management Portal.";
             return View();
         }
+
+        public ActionResult Exist()
+        {
+            return View();
+        }
     }
 }

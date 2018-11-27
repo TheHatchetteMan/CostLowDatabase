@@ -286,6 +286,7 @@
     <Content Include="Views\departments\DepartmentPortal.cshtml" />
     <Content Include="Views\stores\StorePortal.cshtml" />
     <Content Include="Views\visits\VisitPortal.cshtml" />
+    <Content Include="Views\Home\Exist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
