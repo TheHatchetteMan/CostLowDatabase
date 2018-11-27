@@ -155,7 +155,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\departmentsController.cs" />
+    <Compile Include="Controllers\employeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\membersController.cs" />
+    <Compile Include="Controllers\storesController.cs" />
+    <Compile Include="Controllers\visitsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,6 +255,31 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\departments\Create.cshtml" />
+    <Content Include="Views\departments\Delete.cshtml" />
+    <Content Include="Views\departments\Details.cshtml" />
+    <Content Include="Views\departments\Edit.cshtml" />
+    <Content Include="Views\departments\Index.cshtml" />
+    <Content Include="Views\employees\Create.cshtml" />
+    <Content Include="Views\employees\Delete.cshtml" />
+    <Content Include="Views\employees\Details.cshtml" />
+    <Content Include="Views\employees\Edit.cshtml" />
+    <Content Include="Views\employees\Index.cshtml" />
+    <Content Include="Views\members\Create.cshtml" />
+    <Content Include="Views\members\Delete.cshtml" />
+    <Content Include="Views\members\Details.cshtml" />
+    <Content Include="Views\members\Edit.cshtml" />
+    <Content Include="Views\members\Index.cshtml" />
+    <Content Include="Views\stores\Create.cshtml" />
+    <Content Include="Views\stores\Delete.cshtml" />
+    <Content Include="Views\stores\Details.cshtml" />
+    <Content Include="Views\stores\Edit.cshtml" />
+    <Content Include="Views\stores\Index.cshtml" />
+    <Content Include="Views\visits\Create.cshtml" />
+    <Content Include="Views\visits\Delete.cshtml" />
+    <Content Include="Views\visits\Details.cshtml" />
+    <Content Include="Views\visits\Edit.cshtml" />
+    <Content Include="Views\visits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
