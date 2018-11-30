@@ -11,7 +11,8 @@ namespace CostLowApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class store
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,13 @@ namespace CostLowApp.Models
             this.visits = new HashSet<visit>();
         }
     
+        [Display(Name = "Store Number")]
         public int storeNumber { get; set; }
+
+        [Display(Name = "Phone Number")]
         public Nullable<long> phoneNumber { get; set; }
+
+        [Display(Name = "Address")]
         public string address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,7 +11,8 @@ namespace CostLowApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,17 @@ namespace CostLowApp.Models
         {
             this.employees = new HashSet<employee>();
         }
-    
+        
+        [Display(Name = "Department ID")]
         public int departmentId { get; set; }
+
+        [Display(Name = "Store Number")]
         public int storeNumber { get; set; }
+
+        [Display(Name = "Phone Extension")]
         public Nullable<short> phoneExtension { get; set; }
+
+        [Display(Name = "Department Name")]
         public string departmentName { get; set; }
     
         public virtual store store { get; set; }

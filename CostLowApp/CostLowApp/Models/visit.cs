@@ -11,12 +11,20 @@ namespace CostLowApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class visit
     {
+        [Display(Name = "Customer ID")]
         public int customerId { get; set; }
+
+        [Display(Name = "Store Number")]
         public int storeNumber { get; set; }
+
+        [Display(Name = "Date")]
         public System.DateTime date { get; set; }
+
+        [Display(Name = "Amount Spent")]
         public Nullable<decimal> amountSpent { get; set; }
     
         public virtual member member { get; set; }
