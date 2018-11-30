@@ -4,74 +4,39 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Details</h2>
 
-<div class="jumbotron">
-    <h2>Details</h2>
+<div>
+    <h4>visit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amountSpent)
+        </dt>
 
-    <div>
-        <h4>visit</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.date)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.date)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.amountSpent)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.amountSpent)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.store.storeNumber)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.store.storeNumber)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.store.address)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.store.address)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.customerId)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.customerId)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.member.firstName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.member.firstName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.member.lastName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.member.lastName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.member.phoneNumber)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.member.phoneNumber)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.amountSpent)
+        </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.member.firstName)
+        </dt>
 
-        </dl>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.member.firstName)
+        </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.store.address)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.store.address)
+        </dd>
 
-    <p>
-        <!--
-              @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ })
-        -->
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
