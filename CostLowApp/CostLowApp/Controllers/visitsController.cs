@@ -22,13 +22,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int? id2, DateTime id3)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            visit visit = db.visits.Find(id);
+            visit visit = db.visits.Find(id, id2, id3);
             if (visit == null)
             {
                 return HttpNotFound();
