@@ -4,55 +4,57 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="jumbotron">
+    <h2>Details</h2>
 
-<div>
-    <h4>employee</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.phoneNumber)
-        </dt>
+    <div>
+        <h4>employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <!--<dt>
+                @@Html.DisplayNameFor(model => model.phoneNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.phoneNumber)
-        </dd>
+            <dd>
+                @@Html.DisplayFor(model => model.phoneNumber)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.sallary)
-        </dt>
+            <dt>
+                @@Html.DisplayNameFor(model => model.sallary)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sallary)
-        </dd>
+            <dd>
+                @@Html.DisplayFor(model => model.sallary)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firstName)
-        </dt>
+            <dt>
+                @@Html.DisplayNameFor(model => model.firstName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.firstName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.firstName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.lastName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.lastName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.lastName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.lastName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.department.departmentName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.department.departmentName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.department.departmentName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.department.departmentName)
+            </dd>-->
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
