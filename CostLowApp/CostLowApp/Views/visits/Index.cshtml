@@ -12,13 +12,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member.lastName)
+        </th>
+        <th>
+               @Html.DisplayNameFor(model => model.storeNumber)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.amountSpent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.member.firstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.store.address)
         </th>
         <th></th>
     </tr>
@@ -26,17 +29,20 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.store.storeNumber)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.amountSpent)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.member.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.store.address)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Edit", "Edit", new {  id=item.customerId, id2=item.storeNumber, id3=item.date }) |
+            @Html.ActionLink("Details", "Details", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
