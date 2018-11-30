@@ -1,0 +1,41 @@
+CostLow:
+========
+
+Store ++++++++++++++++++
+-----
+	-Create Works (but need to address if an invalid phone number is used)
+	-Edit Works (but also need to address invalid phone number)
+	-Details Works
+	-Delete Works
+
+Department
+----------
+	-Create Works(store number wrong label)
+	-************DEAILS FAILS*
+	-************EDIT FAILS*
+	-************DELETE FAILS*
+
+Employee
+--------
+	-Create Works(Not Desireable Fuctionality)
+	-Edit Works
+	-Details Works
+	-************DELETE FAILS*
+
+Members ++++++++++++++++++++++++++++++
+-------
+	-Create Works
+	-Deails Works
+	-Edit Works
+	-Delete Works
+
+Visits
+------
+	-Create Works
+	-Details Works
+	-Edit Works
+	-************DELETE FAILS*
+
+
+	
+	
