@@ -22,13 +22,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int? id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            employee employee = db.employees.Find(id);
+            employee employee = db.employees.Find(id, id2);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -62,13 +62,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            employee employee = db.employees.Find(id);
+            employee employee = db.employees.Find(id, id2);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -95,13 +95,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int? id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            employee employee = db.employees.Find(id);
+            employee employee = db.employees.Find(id, id2);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -112,9 +112,9 @@ namespace CostLowApp.Controllers
         // POST: employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int id2)
         {
-            employee employee = db.employees.Find(id);
+            employee employee = db.employees.Find(id, id2);
             db.employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
