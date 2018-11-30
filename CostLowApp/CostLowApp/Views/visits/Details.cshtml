@@ -1,0 +1,42 @@
+﻿@model CostLowApp.Models.visit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>visit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amountSpent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amountSpent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.store.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store.address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
