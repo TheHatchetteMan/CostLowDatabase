@@ -5,18 +5,18 @@
 }
 
 <div class="jumbotron">
-    <h2>Details</h2>
+    <h2>Details for Store #@Html.DisplayFor(model => model.storeNumber)</h2>
 
     <div>
-        <h4>store</h4>
+        
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.phoneNumber)
+                @Html.DisplayNameFor(model => model.storeNumber)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.phoneNumber)
+                @Html.DisplayFor(model => model.storeNumber)
             </dd>
 
             <dt>
@@ -26,6 +26,31 @@
             <dd>
                 @Html.DisplayFor(model => model.address)
             </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phoneNumber)
+            </dd>
+
+            <dt>
+                Member Visits
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.visits.Count)
+            </dd>
+
+            <dt>
+                Departments
+            </dt>
+            @foreach (var item in Model.departments)
+            {
+            <dd>
+                @Html.DisplayFor(modelItem => item.departmentName)
+            </dd>
+            }
 
         </dl>
     </div>
