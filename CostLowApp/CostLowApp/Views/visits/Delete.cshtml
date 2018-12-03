@@ -4,45 +4,48 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="jumbotron">
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>visit</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.amountSpent)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>visit</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.amountSpent)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.amountSpent)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.amountSpent)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.member.firstName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.member.firstName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.member.firstName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.member.firstName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.store.address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.store.address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.store.address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.store.address)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>>
