@@ -99,13 +99,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int? id2, DateTime id3)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            visit visit = db.visits.Find(id);
+            visit visit = db.visits.Find(id, id2, id3);
             if (visit == null)
             {
                 return HttpNotFound();
@@ -116,9 +116,9 @@ namespace CostLowApp.Controllers
         // POST: visits/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id, int? id2, DateTime id3)
         {
-            visit visit = db.visits.Find(id);
+            visit visit = db.visits.Find(id, id2, id3);
             db.visits.Remove(visit);
             db.SaveChanges();
             return RedirectToAction("Index");
