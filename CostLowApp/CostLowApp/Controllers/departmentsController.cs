@@ -62,13 +62,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            department department = db.departments.Find(id);
+            department department = db.departments.Find(id, id2);
             if (department == null)
             {
                 return HttpNotFound();

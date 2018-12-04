@@ -11,8 +11,8 @@ Store ++++++++++++++++++
 Department
 ----------
 	-Create Works(store number wrong label)
+	-EDIT Works
 	-************DEAILS FAILS*
-	-************EDIT FAILS*
 	-************DELETE FAILS*
 
 Employee
@@ -20,7 +20,7 @@ Employee
 	-Create Works(Not Desireable Fuctionality)
 	-Edit Works
 	-Details Works
-	-************DELETE FAILS*
+	-Delete Works
 
 Members ++++++++++++++++++++++++++++++
 -------
