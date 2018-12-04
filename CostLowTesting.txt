@@ -34,7 +34,7 @@ Visits
 	-Create Works
 	-Details Works
 	-Edit Works
-	-************DELETE FAILS*
+	-Delete Works
 
 
 	
