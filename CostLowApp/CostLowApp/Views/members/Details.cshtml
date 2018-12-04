@@ -8,15 +8,14 @@
     <h2>Details</h2>
 
     <div>
-        <h4>member</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.phoneNumber)
+                @Html.DisplayNameFor(model => model.customerId)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.phoneNumber)
+                @Html.DisplayFor(model => model.customerId)
             </dd>
 
             <dt>
@@ -33,6 +32,14 @@
 
             <dd>
                 @Html.DisplayFor(model => model.lastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.phoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.phoneNumber)
             </dd>
 
             <dt>
