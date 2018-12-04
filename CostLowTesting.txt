@@ -13,7 +13,7 @@ Department
 	-Create Works(store number wrong label)
 	-Edit Works
 	-Details Works
-	-************DELETE FAILS*
+	-Delete Works
 
 Employee
 --------

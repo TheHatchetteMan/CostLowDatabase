@@ -95,13 +95,13 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int? id2)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            department department = db.departments.Find(id);
+            department department = db.departments.Find(id, id2);
             if (department == null)
             {
                 return HttpNotFound();
@@ -112,9 +112,9 @@ namespace CostLowApp.Controllers
         // POST: departments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int id2)
         {
-            department department = db.departments.Find(id);
+            department department = db.departments.Find(id, id2);
             db.departments.Remove(department);
             db.SaveChanges();
             return RedirectToAction("Index");
