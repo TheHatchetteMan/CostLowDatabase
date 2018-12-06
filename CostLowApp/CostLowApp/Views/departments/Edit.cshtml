@@ -1,15 +1,18 @@
-﻿@model CostLowApp.Models.department
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  Edit.html
+//  Purpose:    Create html form to Edit a department
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+@model CostLowApp.Models.department
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<!-- Kyle- Fixed Edit for Department by changing Action Result Edit to require two Primary Keys 12/4/2018 @4:41PM-->
-
-
 <div class="jumbotron">
     <h2>Edit</h2>
-
 
     @using (Html.BeginForm())
     {
@@ -18,11 +21,16 @@
         <div class="form-horizontal">
             <h4>Department</h4>
             <hr />
+            <!--Begin Edit Form-->
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <!--Hide Department ID: No Edit-->
             @Html.HiddenFor(model => model.departmentId)
 
+            <!--Hide Store Number: No Edit-->
             @Html.HiddenFor(model => model.storeNumber)
 
+            <!--Department Phone Extension-->
             <div class="form-group">
                 @Html.LabelFor(model => model.phoneExtension, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -31,6 +39,7 @@
                 </div>
             </div>
 
+            <!--Department Name-->
             <div class="form-group">
                 @Html.LabelFor(model => model.departmentName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -39,14 +48,17 @@
                 </div>
             </div>
 
+            <!--Submit Button: Sends edit to database-->
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>
+            <!--End Edit Form-->
         </div>
     }
 
+    <!--Back Button: Return user to index list of departments-->
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>

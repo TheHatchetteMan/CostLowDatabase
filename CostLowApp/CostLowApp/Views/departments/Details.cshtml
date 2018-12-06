@@ -1,15 +1,15 @@
-﻿@model CostLowApp.Models.department
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  Details.html
+//  Purpose:    Create html form to display department details
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+@model CostLowApp.Models.department
 
 @{
     ViewBag.Title = "Details";
 }
-
-<!-- Kyle- Added Number of Employees 12/4/2018 5:03PM-->
-<!-- Kyle- Details no longer throws a HTTP 400 error, added two parameters/keys to ActionResult Details.
-    Also reordered some of the information. 12/4/2018 4:50PM-->
-
-
-
 
 <div class="jumbotron">
     <h2>Details</h2>
@@ -17,7 +17,11 @@
     <div>
         <h4>Department</h4>
         <hr />
+
+        <!--Begin list of details-->
         <dl class="dl-horizontal">
+            
+            <!--Department Name-->
             <dt>
                 @Html.DisplayNameFor(model => model.departmentName)
             </dt>
@@ -26,6 +30,7 @@
                 @Html.DisplayFor(model => model.departmentName)
             </dd>
 
+            <!---Department Phone Extension-->
             <dt>
                 @Html.DisplayNameFor(model => model.phoneExtension)
             </dt>
@@ -34,6 +39,7 @@
                 @Html.DisplayFor(model => model.phoneExtension)
             </dd>
 
+            <!--Store Number-->
             <dt>
                 @Html.DisplayNameFor(model => model.storeNumber)
             </dt>
@@ -41,6 +47,8 @@
             <dd>
                 @Html.DisplayFor(model => model.storeNumber)
             </dd>
+
+            <!--Number of department's employees-->
             <dt>
                 Number of Employees
             </dt>
@@ -49,6 +57,7 @@
                 @Html.DisplayFor(model => model.employees.Count)
             </dd>
 
+            <!--Store address-->
             <dt>
                 @Html.DisplayNameFor(model => model.store.address)
             </dt>
@@ -60,7 +69,9 @@
         </dl>
     </div>
     <p>
+        <!--Edit Button: Allow edit of department-->
         @Html.ActionLink("Edit", "Edit", new { id = Model.departmentId, id2 = Model.storeNumber }) |
+        <!--Back Button: Return user to department index-->
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>

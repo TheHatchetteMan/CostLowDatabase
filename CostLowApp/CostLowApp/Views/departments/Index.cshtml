@@ -1,47 +1,65 @@
-﻿@model IEnumerable<CostLowApp.Models.department>
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  Index.html
+//  Purpose:    Create html form to list all departments
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+@model IEnumerable<CostLowApp.Models.department>
 
 @{
     ViewBag.Title = "Index";
 }
-<!-- Kyle- Fixed Delete HTTP 400 ERROR, Passed two Primary Keys, departmentId, and store number for Action Link Delete  12/4/2018 4:56PM-->
-<!-- Kyle- Fixed Details Passed two Primary Keys, departmentId, and store number for Action Link Details 12/4/2018 4:50PM-->
-<!-- Kyle- Fixed Details Passed two Primary Keys, departmentId, and store number for Action Link Edit 12/4/2018 4:41PM-->
 
 <div class="jumbotron">
     <h1>Department List</h1>
 
+    <!--Create Button: Send user to create form-->
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!--Being table of department information-->
     <table class="table">
         <tr>
+            <!--Department Phone Extension-->
             <th>
                 @Html.DisplayNameFor(model => model.phoneExtension)
             </th>
+            <!--Department Name-->
             <th>
                 @Html.DisplayNameFor(model => model.departmentName)
             </th>
+            <!--Store Address-->
             <th>
                 @Html.DisplayNameFor(model => model.store.address)
             </th>
             <th></th>
         </tr>
+        <!--End table of department information-->
 
+        <!--Populate table with data from database-->
         @foreach (var item in Model)
         {
             <tr>
+                <!--Phone Extetnsion-->
                 <td>
                     @Html.DisplayFor(modelItem => item.phoneExtension)
                 </td>
+                <!--Department Name-->
                 <td>
                     @Html.DisplayFor(modelItem => item.departmentName)
                 </td>
+                <!--Store Address-->
                 <td>
                     @Html.DisplayFor(modelItem => item.store.address)
                 </td>
                 <td>
+                    <!--Edit Button: Send user to edit form-->
                     @Html.ActionLink("Edit", "Edit", new { id = item.departmentId, id2 = item.storeNumber }) |
+                    <!--Details Button: Sends user to department details-->
                     @Html.ActionLink("Details", "Details", new { id = item.departmentId, id2 = item.storeNumber }) |
+                    <!--Delete Button: Sends user to delete confirmation-->
                     @Html.ActionLink("Delete", "Delete", new { id = item.departmentId, id2 = item.storeNumber })
                 </td>
             </tr>
