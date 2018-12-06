@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Index";
 }
+<!-- Kyle- Fixed Delete HTTP 400 ERROR, Passed two Primary Keys, departmentId, and store number for Action Link Delete  12/4/2018 4:56PM-->
+<!-- Kyle- Fixed Details Passed two Primary Keys, departmentId, and store number for Action Link Details 12/4/2018 4:50PM-->
+<!-- Kyle- Fixed Details Passed two Primary Keys, departmentId, and store number for Action Link Edit 12/4/2018 4:41PM-->
 
 <div class="jumbotron">
     <h1>Department List</h1>
@@ -37,7 +40,7 @@
                     @Html.DisplayFor(modelItem => item.store.address)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new {  id=item.departmentId, id2 = item.storeNumber  }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.departmentId, id2 = item.storeNumber }) |
                     @Html.ActionLink("Details", "Details", new { id = item.departmentId, id2 = item.storeNumber }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.departmentId, id2 = item.storeNumber })
                 </td>
