@@ -4,6 +4,13 @@
     ViewBag.Title = "Details";
 }
 
+<!-- Kyle- Added Number of Employees 12/4/2018 5:03PM-->
+<!-- Kyle- Details no longer throws a HTTP 400 error, added two parameters/keys to ActionResult Details.
+    Also reordered some of the information. 12/4/2018 4:50PM-->
+
+
+
+
 <div class="jumbotron">
     <h2>Details</h2>
 
@@ -53,7 +60,7 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.departmentId, id2 = Model.storeNumber}) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.departmentId, id2 = Model.storeNumber }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>
