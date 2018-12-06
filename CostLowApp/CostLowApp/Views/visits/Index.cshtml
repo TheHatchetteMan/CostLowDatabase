@@ -1,4 +1,11 @@
-﻿@model IEnumerable<CostLowApp.Models.visit>
+﻿<!--
+    Developers: Hunter Hatchette, Kyle Bastson
+    File Name:  Index.cshtml
+    Purpose: Html code for the Index section of the Visits page.
+    Workload:   We each contributed equally to this.
+-->
+
+@model IEnumerable<CostLowApp.Models.visit>
 
 @{
     ViewBag.Title = "Index";
@@ -27,27 +34,28 @@
             <th></th>
         </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.member.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.store.storeNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.amountSpent)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.customerId, id2=item.storeNumber, id3=item.date }) |
-            @Html.ActionLink("Details", "Details", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.member.lastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.store.storeNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amountSpent)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.customerId, id2 = item.storeNumber, id3 = item.date })
+                </td>
+            </tr>
+        }
 
     </table>
     <p>@Html.ActionLink("BACK", "VisitPortal", "visits")</p>

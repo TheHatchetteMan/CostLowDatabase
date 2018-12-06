@@ -1,4 +1,10 @@
-﻿@model CostLowApp.Models.store
+﻿<!--
+    Developers: Hunter Hatchette, Kyle Bastson
+    File Name:  Details.cshtml
+    Purpose: Html code for the Details section of Store page.
+    Workload:   We each contributed equally to this.
+-->
+@model CostLowApp.Models.store
 
 @{
     ViewBag.Title = "Details";
@@ -8,7 +14,7 @@
     <h2>Details for Store #@Html.DisplayFor(model => model.storeNumber)</h2>
 
     <div>
-        
+
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -47,9 +53,9 @@
             </dt>
             @foreach (var item in Model.departments)
             {
-            <dd>
-                @Html.DisplayFor(modelItem => item.departmentName)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(modelItem => item.departmentName)
+                </dd>
             }
 
         </dl>
