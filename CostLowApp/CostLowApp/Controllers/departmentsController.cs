@@ -1,4 +1,12 @@
-﻿using System;
+﻿//------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  departmentsController.cs
+//  Purpose:    Create a controller to hold functions for the departments group
+//              of views.
+//  Workload:   We each contributed equally to this.
+//------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,11 +18,13 @@ using CostLowApp.Models;
 
 namespace CostLowApp.Controllers
 {
+    //Controller definition
     public class departmentsController : Controller
     {
         private CostLowDatabaseEntities db = new CostLowDatabaseEntities();
 
         // GET: departments
+        //Returns view of index of departments
         public ActionResult Index()
         {
             var departments = db.departments.Include(d => d.store);
@@ -22,6 +32,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Details/5
+        //Returns view of details form selected department
         public ActionResult Details(int? id, int? id2)
         {
             if (id == null)
@@ -37,6 +48,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Create
+        //Allows creation of a new department
         public ActionResult Create()
         {
             ViewBag.storeNumber = new SelectList(db.stores, "storeNumber", "address");
@@ -44,8 +56,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: departments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends created department to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "departmentId,storeNumber,phoneExtension,departmentName")] department department)
@@ -62,6 +73,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Edit/5
+        //Allows editing of a department
         public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
@@ -78,8 +90,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: departments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends edited data to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "departmentId,storeNumber,phoneExtension,departmentName")] department department)
@@ -95,6 +106,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: departments/Delete/5
+        //Gathers department to be deleted
         public ActionResult Delete(int? id, int? id2)
         {
             if (id == null)
@@ -110,6 +122,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: departments/Delete/5
+        //Deletes selected department from the database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, int id2)
@@ -129,6 +142,7 @@ namespace CostLowApp.Controllers
             base.Dispose(disposing);
         }
 
+        //Returns view of department portal with department actions
         public ActionResult DepartmentPortal()
         {
             ViewBag.Message = "Department Actions.";
