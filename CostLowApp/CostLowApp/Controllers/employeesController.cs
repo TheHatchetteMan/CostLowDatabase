@@ -1,4 +1,12 @@
-﻿using System;
+﻿//------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  employeesController.cs
+//  Purpose:    Create a controller to hold functions for the employees group
+//              of views.
+//  Workload:   We each contributed equally to this.
+//------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,11 +18,13 @@ using CostLowApp.Models;
 
 namespace CostLowApp.Controllers
 {
+    //Contorller definition
     public class employeesController : Controller
     {
         private CostLowDatabaseEntities db = new CostLowDatabaseEntities();
 
         // GET: employees
+        //Return view of index of employees
         public ActionResult Index()
         {
             var employees = db.employees.Include(e => e.department);
@@ -22,6 +32,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Details/5
+        //Return view of details about a selected employee
         public ActionResult Details(int? id, int? id2)
         {
             if (id == null)
@@ -37,6 +48,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Create
+        //Allows creation of a new employee
         public ActionResult Create()
         {
             ViewBag.departmentId = new SelectList(db.departments, "departmentId", "departmentName");
@@ -44,8 +56,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: employees/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends new employee to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ssn,departmentId,storeNumber,phoneNumber,sallary,firstName,lastName")] employee employee)
@@ -62,6 +73,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Edit/5
+        //Allows editing of an employee
         public ActionResult Edit(int? id, int? id2)
         {
             if (id == null)
@@ -78,8 +90,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: employees/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends edited employee data to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ssn,departmentId,storeNumber,phoneNumber,sallary,firstName,lastName")] employee employee)
@@ -95,6 +106,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: employees/Delete/5
+        //Gathers employee to be deleted
         public ActionResult Delete(int? id, int? id2)
         {
             if (id == null)
@@ -110,6 +122,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: employees/Delete/5
+        //Deletes selected employee from database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, int id2)
@@ -129,6 +142,7 @@ namespace CostLowApp.Controllers
             base.Dispose(disposing);
         }
 
+        //Returns view of employee portal with employee actions
         public ActionResult EmployeePortal()
         {
             ViewBag.Message = "Employee Actions.";

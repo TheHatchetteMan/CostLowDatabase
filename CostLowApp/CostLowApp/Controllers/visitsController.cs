@@ -1,4 +1,12 @@
-﻿using System;
+﻿//------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  visitsController.cs
+//  Purpose:    Create a controller to hold functions for the visits group
+//              of views.
+//  Workload:   We each contributed equally to this.
+//------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,12 +17,14 @@ using System.Web.Mvc;
 using CostLowApp.Models;
 
 namespace CostLowApp.Controllers
-{
+{   
+    //Controller Definition
     public class visitsController : Controller
     {
         private CostLowDatabaseEntities db = new CostLowDatabaseEntities();
 
         // GET: visits
+        //Returns view of index of visits
         public ActionResult Index()
         {
             var visits = db.visits.Include(v => v.member).Include(v => v.store);
@@ -22,6 +32,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Details/5
+        //Returns view of details about a selected visit
         public ActionResult Details(int? id, int? id2, DateTime id3)
         {
             if (id == null)
@@ -37,6 +48,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Create
+        //Creates a new visit
         public ActionResult Create()
         {
             ViewBag.customerId = new SelectList(db.members, "customerId", "firstName");
@@ -45,8 +57,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: visits/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends created visit to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "customerId,storeNumber,date,amountSpent")] visit visit)
@@ -64,6 +75,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Edit/5
+        //Allows edit of a selected visit
         public ActionResult Edit(int? id, int? id2, DateTime id3)
         {
             if (id == null)
@@ -81,8 +93,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: visits/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends edited data to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "customerId,storeNumber,date,amountSpent")] visit visit)
@@ -99,6 +110,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: visits/Delete/5
+        //Gathers visit to be deleted
         public ActionResult Delete(int? id, int? id2, DateTime id3)
         {
             if (id == null)
@@ -114,6 +126,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: visits/Delete/5
+        //Deletes selected visit from database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int? id, int? id2, DateTime id3)
@@ -133,6 +146,7 @@ namespace CostLowApp.Controllers
             base.Dispose(disposing);
         }
 
+        //Returns the visit portal to list actions
         public ActionResult VisitPortal()
         {
             ViewBag.Message = "Visit Actions.";

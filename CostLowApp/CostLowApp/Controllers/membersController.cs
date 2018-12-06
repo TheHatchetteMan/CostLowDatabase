@@ -1,4 +1,12 @@
-﻿using System;
+﻿//------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  membersController.cs
+//  Purpose:    Create a controller to hold functions for the members group
+//              of views.
+//  Workload:   We each contributed equally to this.
+//------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -15,12 +23,14 @@ namespace CostLowApp.Controllers
         private CostLowDatabaseEntities db = new CostLowDatabaseEntities();
 
         // GET: members
+        //Returns view with index of members
         public ActionResult Index()
         {
             return View(db.members.ToList());
         }
 
         // GET: members/Details/5
+        //Returns view of details about the selected member
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,14 +46,14 @@ namespace CostLowApp.Controllers
         }
 
         // GET: members/Create
+        //Allows creation of a new member
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: members/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends created member to database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "customerId,phoneNumber,firstName,lastName,active")] member member)
@@ -59,6 +69,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: members/Edit/5
+        //Allows editing of selected member
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,8 +85,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: members/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Sends edited data to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "customerId,phoneNumber,firstName,lastName,active")] member member)
@@ -90,6 +100,7 @@ namespace CostLowApp.Controllers
         }
 
         // GET: members/Delete/5
+        //Gathers member to be deleted
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +116,7 @@ namespace CostLowApp.Controllers
         }
 
         // POST: members/Delete/5
+        //Deletes selected member from the database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -124,6 +136,7 @@ namespace CostLowApp.Controllers
             base.Dispose(disposing);
         }
 
+        //Returns a view containing the member portal with member actions
         public ActionResult MemberPortal()
         {
             ViewBag.Message = "Member Actions.";
