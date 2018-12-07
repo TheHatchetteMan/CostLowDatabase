@@ -1,4 +1,11 @@
-﻿@model CostLowApp.Models.employee
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  Details.html
+//  Purpose:    Create html to view department details
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+@model CostLowApp.Models.employee
 
 @{
     ViewBag.Title = "Details";
@@ -10,7 +17,11 @@
     <div>
         <h4>Employee</h4>
         <hr />
+
+        <!--Employee Detail List-->
         <dl class="dl-horizontal">
+
+            <!--First NAme field-->
             <dt>
                 @Html.DisplayNameFor(model => model.firstName)
             </dt>
@@ -19,6 +30,7 @@
                 @Html.DisplayFor(model => model.firstName)
             </dd>
 
+            <!--Last Name Field-->
             <dt>
                 @Html.DisplayNameFor(model => model.lastName)
             </dt>
@@ -27,6 +39,7 @@
                 @Html.DisplayFor(model => model.lastName)
             </dd>
 
+            <!--Phone Number Field-->
             <dt>
                 @Html.DisplayNameFor(model => model.phoneNumber)
             </dt>
@@ -35,6 +48,7 @@
                 @Html.DisplayFor(model => model.phoneNumber)
             </dd>
 
+            <!--Salary Field-->
             <dt>
                 @Html.DisplayNameFor(model => model.sallary)
             </dt>
@@ -43,6 +57,7 @@
                 @Html.DisplayFor(model => model.sallary)
             </dd>
 
+            <!--Store Number Field-->
             <dt>
                 @Html.DisplayNameFor(model => model.storeNumber)
             </dt>
@@ -51,6 +66,7 @@
                 @Html.DisplayFor(model => model.storeNumber)
             </dd>
 
+            <!--Department Name Field-->
             <dt>
                 @Html.DisplayNameFor(model => model.department.departmentName)
             </dt>
@@ -60,7 +76,10 @@
             </dd>
 
         </dl>
+        <!--End List-->
     </div>
+
+    <!--Back Button: Send user to Employee Index-->
     <p>
         @Html.ActionLink("Back to List", "Index")
     </p>

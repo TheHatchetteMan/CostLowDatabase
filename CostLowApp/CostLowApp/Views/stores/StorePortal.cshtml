@@ -10,9 +10,13 @@
 
 <div class="jumbotron">
     <h1>@ViewBag.Message</h1>
+
+    <!--Welcome-->
     <p class="lead">
         Welcome to the Store Management Section. Please select an option found below.
     </p>
+
+    <!--Set Button Style-->
     <style>
         .btn-group .button {
             background-color: lightslategray;
@@ -35,12 +39,20 @@
                 background-color: azure;
             }
     </style>
+
+    <!--Button Options-->
     <div class="btn-group">
+
+        <!--Create Button: Send user to Store Create form-->
         <a href="/stores/Create" class="button">Create</a>
+
+        <!--List Button: Send user to Store Index-->
         <a href="/stores/Index" class="button">List</a>
     </div>
     <br />
     <br />
+
+    <!--Back Button: Send user to homepage-->
     <a href="/Home/Manage" class="button">BACK</a>
 </div>
 

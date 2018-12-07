@@ -14,9 +14,12 @@
 <div class="jumbotron">
     <h2>Visit List</h2>
 
+    <!--Create Button: Send user to Create Visit Form-->
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!--Create Table to Display Visits-->
     <table class="table">
         <tr>
             <th>
@@ -34,6 +37,7 @@
             <th></th>
         </tr>
 
+        <!--Populate Table from database-->
         @foreach (var item in Model)
         {
             <tr>

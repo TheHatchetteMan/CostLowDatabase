@@ -1,4 +1,11 @@
-﻿@model IEnumerable<CostLowApp.Models.employee>
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  Index.html
+//  Purpose:    Create html form to List Employees
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+@model IEnumerable<CostLowApp.Models.employee>
 
 @{
     ViewBag.Title = "Index";
@@ -7,29 +14,43 @@
 <div class="jumbotron">
     <h2>Employee List</h2>
 
+    <!--Create Button: Send user to Create Employee form-->
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!--Create table to display Employees-->
     <table class="table">
         <tr>
+
+            <!--Employee Phone Number-->
             <th>
                 @Html.DisplayNameFor(model => model.phoneNumber)
             </th>
+
+            <!--Employee Salary-->
             <th>
                 @Html.DisplayNameFor(model => model.sallary)
             </th>
+
+            <!--Employee First Name-->
             <th>
                 @Html.DisplayNameFor(model => model.firstName)
             </th>
+
+            <!--Employee Last NAme-->
             <th>
                 @Html.DisplayNameFor(model => model.lastName)
             </th>
+
+            <!--Department Name-->
             <th>
                 @Html.DisplayNameFor(model => model.department.departmentName)
             </th>
             <th></th>
         </tr>
 
+        <!--Populate Table from database-->
         @foreach (var item in Model)
         {
             <tr>
@@ -51,11 +72,13 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ssn, id2 = item.departmentId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ssn, id2 = item.departmentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ssn, id2 = item.departmentId})
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ssn, id2 = item.departmentId })
                 </td>
             </tr>
         }
 
     </table>
+
+    <!--Back Button: Send user to Employee Action page-->
     <p>@Html.ActionLink("BACK", "EmployeePortal", "employees")</p>
 </div>

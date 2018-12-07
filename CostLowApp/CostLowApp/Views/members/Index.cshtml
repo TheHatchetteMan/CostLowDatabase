@@ -16,6 +16,8 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!--Create Member talbe-->
     <table class="table">
         <tr>
             <th>
@@ -33,6 +35,7 @@
             <th></th>
         </tr>
 
+        <!--Populate member table from database-->
         @foreach (var item in Model)
         {
             <tr>
@@ -48,14 +51,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.active)
                 </td>
+
+                <!--Button Options-->
                 <td>
+                    <!--Edit Button: Send user to Edit Member form-->
                     @Html.ActionLink("Edit", "Edit", new { id = item.customerId }) |
+
+                    <!--Detials Button: Send user to Member details page-->
                     @Html.ActionLink("Details", "Details", new { id = item.customerId }) |
+
+                    <!--Delete Button: Send user to confirm delete page-->
                     @Html.ActionLink("Delete", "Delete", new { id = item.customerId })
                 </td>
             </tr>
         }
 
     </table>
+
+    <!--Back Button: Send user to Member Action page-->
     <p>@Html.ActionLink("BACK", "MemberPortal", "members")</p>
 </div>

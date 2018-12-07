@@ -1,13 +1,23 @@
-﻿
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  EmployeePortal.html
+//  Purpose:    Create html give Employee Actions
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
 @{
     ViewBag.Title = "EmployeePortal";
 }
 
 <div class="jumbotron">
     <h1>@ViewBag.Message</h1>
+
+    <!--Welcome-->
     <p class="lead">
         Welcome to the Employee Management Section. Please select an option found below.
     </p>
+
+    <!--Set Button Style-->
     <style>
         .btn-group .button {
             background-color: lightslategray;
@@ -30,12 +40,20 @@
                 background-color: azure;
             }
     </style>
+
+    <!--Button Options-->
     <div class="btn-group">
+
+        <!--Create Button: Send user to Create Employee Form-->
         <a href="/employees/Create" class="button">Create</a>
+
+        <!--List Button: Send user to Employee Index-->
         <a href="/employees/Index" class="button">List</a>
     </div>
     <br />
     <br />
+
+    <!--Back Button: Send user to Management Portal-->
     <a href="/Home/Manage" class="button">BACK</a>
 </div>
 

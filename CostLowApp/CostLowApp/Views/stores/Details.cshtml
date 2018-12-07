@@ -16,7 +16,11 @@
     <div>
 
         <hr />
+        
+        <!--Begin Details List-->
         <dl class="dl-horizontal">
+
+            <!--Store Number Data-->
             <dt>
                 @Html.DisplayNameFor(model => model.storeNumber)
             </dt>
@@ -25,6 +29,7 @@
                 @Html.DisplayFor(model => model.storeNumber)
             </dd>
 
+            <!--Store Address Data-->
             <dt>
                 @Html.DisplayNameFor(model => model.address)
             </dt>
@@ -33,6 +38,7 @@
                 @Html.DisplayFor(model => model.address)
             </dd>
 
+            <!--Store Phone Number Data-->
             <dt>
                 @Html.DisplayNameFor(model => model.phoneNumber)
             </dt>
@@ -41,6 +47,7 @@
                 @Html.DisplayFor(model => model.phoneNumber)
             </dd>
 
+            <!--Member Visits Data-->
             <dt>
                 Member Visits
             </dt>
@@ -51,6 +58,10 @@
             <dt>
                 Departments
             </dt>
+            <!--End List-->
+
+            
+            <!--Populate department list-->
             @foreach (var item in Model.departments)
             {
                 <dd>
@@ -61,7 +72,10 @@
         </dl>
     </div>
     <p>
+        <!--Edit Button: Send user to Store Edit form-->
         @Html.ActionLink("Edit", "Edit", new { id = Model.storeNumber }) |
+
+        <!--Back Button: Send user to Store Index-->
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>

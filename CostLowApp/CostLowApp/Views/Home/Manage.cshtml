@@ -10,10 +10,14 @@
 
 <div class="jumbotron">
     <h1>Management Portal</h1>
+
+    <!--Greet User-->
     <p class="lead">
         Welcome to the management portal. <br> You may manage the database from this page. Please select one
         of the buttons found below to navigate to the information you would like to modify or view:
     </p>
+
+    <!--Button Style-->
     <style>
         .btn-group .button {
             background-color: lightslategray;
@@ -36,11 +40,23 @@
                 background-color: azure;
             }
     </style>
+
+    <!--Button Options-->
     <div class="btn-group">
+
+        <!--Employees Button: Send user to Employee Action page-->
         <a href="/employees/EmployeePortal" class="button">Employees</a>
+
+        <!--Stores Button: Send user to Store Action page-->
         <a href="/stores/StorePortal" class="button">Stores</a>
+
+        <!--Departments Button: Send user to Department Action page-->
         <a href="/departments/DepartmentPortal" class="button">Departments</a>
+
+        <!--Members Button: Send user to Member Action page-->
         <a href="/members/MemberPortal" class="button">Members</a>
+
+        <!--Visits Button: Sends user to Visit Action page-->
         <a href="/visits/VisitPortal" class="button">Visits</a>
     </div>
 </div>

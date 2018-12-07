@@ -14,9 +14,12 @@
 <div class="jumbotron">
     <h2>Store List</h2>
 
+    <!--Create Button: Send user to Store Create form-->
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
+
+    <!--Create Store Index table-->
     <table class="table">
         <tr>
             <th>
@@ -28,6 +31,7 @@
             <th></th>
         </tr>
 
+        <!--Populate table from database-->
         @foreach (var item in Model)
         {
             <tr>
@@ -46,5 +50,7 @@
         }
 
     </table>
+
+    <!--Back Button: Send user to Store Action page-->
     <p>@Html.ActionLink("BACK", "StorePortal", "stores")</p>
 </div>

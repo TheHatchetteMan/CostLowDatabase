@@ -10,9 +10,13 @@
 
 <div class="jumbotron">
     <h1>@ViewBag.Message</h1>
+
+    <!--Welcome User-->
     <p class="lead">
         Welcome to the Member Management Section. Please select an option found below.
     </p>
+
+    <!--Button Style-->
     <style>
         .btn-group .button {
             background-color: lightslategray;
@@ -35,12 +39,19 @@
                 background-color: azure;
             }
     </style>
+
+    <!--Button Options-->
     <div class="btn-group">
+        <!--Create Button: Send user to Member create form-->
         <a href="/members/Create" class="button">Create</a>
+
+        <!--List Button: Send user to member index-->
         <a href="/members/Index" class="button">List</a>
     </div>
     <br />
     <br />
+
+    <!--Back Button: Send user to Manage Portal-->
     <a href="/Home/Manage" class="button">BACK</a>
 </div>
 

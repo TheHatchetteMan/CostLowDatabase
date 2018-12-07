@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<!------------------------------------------------------------------------------
+//  Developers: Hunter Hatchette, Kyle Bastson
+//  File Name:  _Layout.html
+//  Purpose:    Create base Html page
+//  Workload:   We each contributed equally to this.
+//----------------------------------------------------------------------------->
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,12 +14,16 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+
+<!--Create Style for all pages-->
 <style>
     body {
         background-color: darkseagreen;
     }
 </style>
 <body>
+
+    <!--Create Nav Bar for top of pages-->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -21,12 +32,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
+                <!--Homepage Link-->
                 @Html.ActionLink("CostLow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
+                    <!--Manage Portal Link-->
                     <li>@Html.ActionLink("Manage", "Manage", "Home")</li>
+
+                    <!--About page link-->
                     <li>@Html.ActionLink("About", "About", "Home")</li>
+
+                    <!--Contact page link-->
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
@@ -35,6 +54,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+
+        <!--Create footer-->
         <footer>
             <p>&copy; @DateTime.Now.Year - 521 Project</p>
         </footer>

@@ -13,11 +13,16 @@
 <div class="jumbotron">
     <h2>Delete</h2>
 
+    <!--Ensure User wants to Delete Store-->
     <h3>Are you sure you want to delete this?</h3>
     <div>
         <h4>store</h4>
         <hr />
+
+        <!--Display Relavant Details-->
         <dl class="dl-horizontal">
+
+            <!--Store Phone Number Data-->
             <dt>
                 @Html.DisplayNameFor(model => model.phoneNumber)
             </dt>
@@ -26,6 +31,7 @@
                 @Html.DisplayFor(model => model.phoneNumber)
             </dd>
 
+            <!--Store Address Data-->
             <dt>
                 @Html.DisplayNameFor(model => model.address)
             </dt>
@@ -41,7 +47,11 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
+
+                <!--Submit Button: Delete Store from database-->
                 <input type="submit" value="Delete" class="btn btn-default" /> |
+
+                <!--Back Button: Send user to STore Index-->
                 @Html.ActionLink("Back to List", "Index")
             </div>
         }
